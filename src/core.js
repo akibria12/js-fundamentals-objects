@@ -10,10 +10,16 @@ delete person.size
 console.log(person)
 
 // 3. Increase the person's age by 11
+person.age += 11
+console.log(person)
 
 // 4. Add an instruments property to the person, initialised as an empty array
+person.instruments = ['']
+console.log(person)
 
 // 5. Add the following instruments to the persons instruments array: Guitar, Piano, Vocals
+person.instruments = ['Guitar', 'Piano', 'Vocals']
+console.log(person)
 
 // 6. Using an index on the instruments array, set the mainInstrument variable below
 // to the third instrument in the array
