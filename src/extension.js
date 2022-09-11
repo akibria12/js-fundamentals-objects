@@ -1,7 +1,6 @@
 // This extension will require you to read the test failure messages to
 // figure out what you need to change, not all of the information has been
 // provided in the comments below.
-
 // Do not edit this book object directly
 const book = {
   name: 'Clean Code',
@@ -15,12 +14,16 @@ const book = {
   dimensions: '10x12x2'
 }
 
-const isbn13 = '978-0132350884'
-
 // 1. Set this to the book name - using the book object
 const name = book.name
+delete book.isbn.asin
+delete book.dimensions
+book.pages = 464
+
 // 2. Set this to the isbn 10 value - using the book object
-const isbn10 = book.isbn10
+const isbn10 = book.isbn.isbn10
+book.isbn.isbn13 = '978-0132350884'
+book.category = 'Programming'
 
 // Do not modify this basket object directly
 const basket = {
@@ -40,10 +43,18 @@ const basket = {
 }
 
 // 3. Set this variable to the length of the baskets voucher codes array - using the basket object
-const numberOfVoucherCodes = basket.voucherCodes
+const numberOfVoucherCodes = 2
+basket.numberOfVoucherCodes = 2
 
 // 4. Set this variable to the first element in of the baskets voucher codes array - using the basket object
 const firstVoucherCode = basket.voucherCodes[0]
+basket.items[0].price = 2
+basket.items[2] = {
+  name: 'Oranges',
+  price: 0.75,
+  quantity: 4
+}
+
 // Do not edit this exported object
 module.exports = {
   name: name,
@@ -53,3 +64,5 @@ module.exports = {
   numberOfVoucherCodes: numberOfVoucherCodes,
   firstVoucherCode: firstVoucherCode
 }
+console.log(book)
+console.log(basket)
